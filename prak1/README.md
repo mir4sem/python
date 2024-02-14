@@ -22,3 +22,14 @@ def main(z, y, x):
              ((y**3 - 48) ** 5 / 73)))
 
 ```
+
+```python
+import math
+
+
+def main(z, y, x):
+    return (((70 * math.pow(y, 3) + math.pow(x, 2) + z) ** 2) -
+            (math.exp((math.pow(x, 3) / 20) + 1 + 55 * z) ** 4 -
+             ((math.pow(y, 3) - 48) ** 5 / 73)))
+
+```
