@@ -14,5 +14,4 @@ def main(y):
         return y**4 + 70 * math.pow(y, 7) # СТЕПЕРЬ ЧЕРЕЗ pow!
     return 5 * (y - (y**2/4))**4 + 1
 
-
 ```
