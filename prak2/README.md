@@ -19,7 +19,7 @@ def main(y):
 
 ```
 
-```
+```python
 import math
 
 
