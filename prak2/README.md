@@ -120,7 +120,7 @@ def main(y):
     elif 158 <= y < 251:
         a = 0.08 - 72 * my_abs(y**3) - 33
         b = tan(y**3 / 91 + 41 * y**2 + 76)**5
-        return a * b
+        return 0.08-72 * abs(y**3)-33 * math.tan(y**3 / 91 + 41 * y**2 + 76)**5
     elif 251 <= y < 320:
         a = y**4 + 70 * pow(y, 7)
         return a
