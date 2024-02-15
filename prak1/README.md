@@ -57,3 +57,15 @@ def main(z, y, x):
             ((y**3 - 48) ** 5 / 73)))
 
 ```
+
+## 4 способ
+```python
+from math import exp
+
+
+def main(z, y, x):
+    return (((70 * y**3 + x**2 + z) ** 2) -
+            (exp((x**3 / 20) + 1 + 55 * z) ** 4 -
+             ((y**3 - 48) ** 5 / 73)))
+
+```
