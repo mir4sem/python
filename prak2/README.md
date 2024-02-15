@@ -94,7 +94,7 @@ def main(y):
     elif 251 <= y < 320:
         a = y**4 + 70 * math.pow(y, 7)
         return a
-    a =  5 * (y - (y**2/4))**4 + 1
+    a = 5 * (y - (y**2/4))**4 + 1
     return a
 
 ```
