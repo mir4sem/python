@@ -33,7 +33,7 @@ def main(y):
         return 0.08-72 * abs(y**3)-33 * math.tan(y**3 / 91 + 41 * y**2 + 76)**5
     elif 251 <= y < 320:
         return y**4 + 70 * math.pow(y, 7)
-    elif y >= 320:
+    else:
         return 5 * (y - (y**2/4))**4 + 1
 
 ```
