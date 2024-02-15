@@ -1,6 +1,7 @@
 ```python
 import math
 
+
 def f(y):
     if y < 70:
         return ((y**3 / 37) + 1) - 44 * (73 * y**3 - 1)**6
