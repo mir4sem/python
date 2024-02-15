@@ -37,3 +37,42 @@ def main(y):
         return 5 * (y - (y**2/4))**4 + 1
 
 ```
+
+```python
+import math
+
+
+def main(y):
+    if y < 70:
+        return func1(y)
+    elif 70 <= y < 158:
+        return func2(y)
+    elif 158 <= y < 251:
+        return func3(y)
+    elif 251 <= y < 320:
+        return func4(y)
+    else:
+        return func5(y)
+
+
+def func1(y):
+    return ((y ** 3 / 37) + 1) / 3 - 44 * (73 * y ** 3 - 1) ** 6
+
+
+def func2(y):
+    return 1 + (5 * y ** 2 - y - y ** 3) ** 3 + 60 * y
+
+
+def func3(y):
+    return 0.08 - 72 * abs(y ** 3) -
+    (33 * math.tan(y ** 3 / 91 + 41 * y ** 2 + 76) ** 5)
+
+
+def func4(y):
+    return y ** 4 + 70 * y ** 7
+
+
+def func5(y):
+    return 5 * (y - (y ** 2 / 4)) ** 4 + 1
+
+```
