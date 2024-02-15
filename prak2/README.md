@@ -97,3 +97,24 @@ def main(y):
     return 5 * (y - (y**2/4))**4 + 1
 
 ```
+
+```python
+from math import pow, tan
+
+
+def main(y):
+    if y < 70:
+        a = ((y**3 / 37) + 1) / 3 - 44 * (73 * y**3 - 1)**6
+        return a
+    elif 70 <= y < 158:
+        a = 1 + pow(5 * y**2 - y - y**3, 3) + 60 * y
+        return a
+    elif 158 <= y < 251:
+        a = 0.08 - 72 * abs(y**3) - 33
+        return 0.08-72 * abs(y**3)-33 * tan(y**3 / 91 + 41 * y**2 + 76)**5
+    elif 251 <= y < 320:
+        a = y**4 + 70 * pow(y, 7)
+        return a
+    return 5 * (y - (y**2/4))**4 + 1
+
+```
