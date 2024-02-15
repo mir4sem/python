@@ -1,5 +1,6 @@
 CТЕПЕРЬ ЧЕРЕЗ pow!
 
+## 1 способ
 ```python
 import math
 
