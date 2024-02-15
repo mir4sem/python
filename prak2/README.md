@@ -101,6 +101,11 @@ def main(y):
 ```python
 from math import pow, tan
 
+def my_abs(x):
+    if x < 0:
+        return -x
+    else:
+        return x
 
 def main(y):
     if y < 70:
@@ -110,8 +115,9 @@ def main(y):
         a = 1 + pow(5 * y**2 - y - y**3, 3) + 60 * y
         return a
     elif 158 <= y < 251:
-        a = 0.08 - 72 * abs(y**3) - 33
-        return 0.08-72 * abs(y**3)-33 * tan(y**3 / 91 + 41 * y**2 + 76)**5
+        a = 0.08 - 72 * my_abs(y**3) - 33
+        b = tan(y**3 / 91 + 41 * y**2 + 76)**5
+        return a * b
     elif 251 <= y < 320:
         a = y**4 + 70 * pow(y, 7)
         return a
