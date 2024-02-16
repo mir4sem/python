@@ -44,3 +44,18 @@ def main(b, m, n, p):
     return result
 
 ```
+
+```python
+def main(b, m, n, p):
+    result = 0
+    for j in range(1, n + 1):
+        for i in range(1, m + 1):
+            inner_sum = 0
+            for k in range(1, b + 1):
+                a = ((1 - k ** 3) ** 6) / 8
+                c = p + 64 * (7 + i ** 3 + 40 * j) ** 7
+                inner_sum += (a + c)
+            result += inner_sum
+    return result
+
+```
