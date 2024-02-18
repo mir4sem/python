@@ -1,1 +1,1 @@
-# python
+- https://github.com/vot-vam-kotik/kispython/blob/main/homeworks/task_1.py
