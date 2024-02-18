@@ -3,4 +3,4 @@
 - https://github.com/kamabulletone/python-practice-2
 - https://github.com/ValeryVerkhoturov/kispython
 - https://github.com/SunnyientDev/all_courses
-- https://github.com/vot-vam-kotik/kispython
+- https://github.com/yunikeil/kispython
