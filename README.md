@@ -4,3 +4,4 @@
 - https://github.com/ilyamed-mirea/4_python
 - https://github.com/ValeryVerkhoturov/kispython
 - https://github.com/SunnyientDev/all_courses
+- https://github.com/vot-vam-kotik/kispython
