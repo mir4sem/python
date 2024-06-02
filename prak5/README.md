@@ -1,5 +1,7 @@
 ![изображение](https://github.com/mir4sem/python/assets/70198995/7d6addd5-2457-4298-93f3-907653b05a87)
 
+$f\overrightarrow{z},\overrightarrow{x},\overrightarrow{y} = \sum_{i+1}^{n} \left (z_{n+1-i}^{3} - y_{n+1-[i/2]}^{2}-81x_{[i/2]}\right) ^ 6 $
+ 
 Примеры результатов вычислений:
 
 f([0.24, -0.09],
