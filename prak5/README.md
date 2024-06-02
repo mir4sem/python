@@ -91,6 +91,25 @@ def main(z, y, x):
 
 ```
 
+```python
+from math import floor
+from functools import reduce
+
+
+def main(z, y, x):
+    n = len(z)
+
+    def compute(i):
+        z_index = n - i
+        y_index = n - floor((i - 1) / 2) - 1
+        x_index = floor((i - 1) / 2)
+        return (z[z_index] ** 3 - y[y_index] ** 2 - 81 * x[x_index]) ** 6
+
+    result = reduce(lambda acc, i: acc + compute(i), range(1, n + 1), 0)
+    return result
+
+```
+
 ## 4 способ
 ```python
 from math import floor
