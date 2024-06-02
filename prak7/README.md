@@ -54,3 +54,52 @@ def main(x):
                     x1(x, 3, 4, 5)), 6, x2(x, x3(x, 7, 8, 9), 10))
 
 ```
+
+### Когнитивно сложный код 12 > 10
+```
+def main(x):
+    decision_tree = {
+        'HAML': {
+            2001: {
+                'METAL': 0,
+                'TXL': 1,
+                'JSON5': 2
+            },
+            1971: {
+                'METAL': 3,
+                'TXL': 4,
+                'JSON5': 5
+            }
+        },
+        'PERL': 6,
+        'VHDL': {
+            2001: {
+                'E': 7,
+                'IOKE': 8,
+                'REBOL': 9
+            },
+            1971: 10
+        }
+    }
+
+    current_node = decision_tree.get(x[0], None)
+    if current_node is None:
+        return None
+
+    if isinstance(current_node, dict):
+        current_node = current_node.get(x[2], None)
+        if current_node is None:
+            return None
+
+    if isinstance(current_node, dict):
+        current_node = current_node.get(x[1], None)
+        if current_node is None:
+            return None
+
+    if isinstance(current_node, dict):
+        current_node = current_node.get(x[3], None)
+        if current_node is None:
+            return None
+
+    return current_node if isinstance(current_node, int) else None
+```
