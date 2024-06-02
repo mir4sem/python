@@ -144,6 +144,33 @@ def main(z, y, x):
 
 ```
 
+```python
+from math import floor
+
+
+def sum_decorator(func):
+    def wrapper(z, y, x):
+        n = len(z)
+        result = 0
+        for i in range(1, n + 1):
+            result += func(z, y, x, i, n)
+        return result
+    return wrapper
+
+
+@sum_decorator
+def compute(z, y, x, i, n):
+    z_index = n - i
+    y_index = n - floor((i - 1) / 2) - 1
+    x_index = floor((i - 1) / 2)
+    return (z[z_index] ** 3 - y[y_index] ** 2 - 81 * x[x_index]) ** 6
+
+
+def main(z, y, x):
+    return compute(z, y, x)
+
+```
+
 ## 4 способ
 ```python
 from math import floor
