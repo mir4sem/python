@@ -163,7 +163,7 @@ import re
 
 def main(data_string):
     # Удаляем начальные и конечные символы
-    data_string = data_string.strip('<<< >>>')
+    data_string = data_string.strip('.begin .end')
     
     # Используем регулярное выражение для поиска всех пар (ключ, значение)
     pattern = r"val\s+(\w+)\s*<\|\s*\[\s*\#([^\]]+)\]"
