@@ -107,3 +107,5 @@ table2 = [
 print(transform_table(table1))
 print(transform_table(table2))
 ```
+
+# 1 вариант
