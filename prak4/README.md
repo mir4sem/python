@@ -1,3 +1,5 @@
+![изображение](https://github.com/mir4sem/python/assets/70198995/f3c8b833-5fa2-4a75-bdb8-2bf2cbd59f32)
+
 ```python
 def main(n):
     if n == 0:
