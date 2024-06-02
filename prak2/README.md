@@ -187,6 +187,44 @@ def main(y):
 
 ```
 
+```python
+import math
+
+
+def f1(y):
+    return ((y**3 / 37) + 1) / 3 - 44 * (73 * y**3 - 1)**6
+
+
+def f2(y):
+    return 1 + math.pow(5 * y**2 - y - y**3, 3) + 60 * y
+
+
+def f3(y):
+    return (0.08 - 72 * abs(y**3) -
+            33 * math.tan(y**3 / 91 + 41 * y**2 + 76)**5)
+
+
+def f4(y):
+    return y**4 + 70 * math.pow(y, 7)
+
+
+def f5(y):
+    return 5 * (y - (y**2 / 4))**4 + 1
+
+
+def main(y):
+    if y < 70:
+        return f1(y)
+    elif 70 <= y < 158:
+        return f2(y)
+    elif 158 <= y < 251:
+        return f3(y)
+    elif 251 <= y < 320:
+        return f4(y)
+    else:  # y >= 320
+        return f5(y)
+```
+
 ### 3 способ
 ```python
 import math
