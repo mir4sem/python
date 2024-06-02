@@ -1,4 +1,4 @@
-CТЕПЕРЬ ЧЕРЕЗ pow!
+![изображение](https://github.com/mir4sem/python/assets/70198995/b440e45c-1fa7-4002-80d9-809642b875ee)
 
 ## 1 способ
 ```python
