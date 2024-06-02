@@ -110,6 +110,40 @@ def main(z, y, x):
 
 ```
 
+```python
+from math import floor
+
+
+class FunctionIterator:
+    def __init__(self, z, y, x):
+        self.z = z
+        self.y = y
+        self.x = x
+        self.n = len(z)
+        self.i = 1
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.i > self.n:
+            raise StopIteration
+        z_index = self.n - self.i
+        y_index = self.n - floor((self.i - 1) / 2) - 1
+        x_index = floor((self.i - 1) / 2)
+        result = (self.z[z_index] ** 3 -
+                  self.y[y_index] ** 2 - 81 * self.x[x_index]) ** 6
+        self.i += 1
+        return result
+
+
+def main(z, y, x):
+    iterator = FunctionIterator(z, y, x)
+    result = sum(iterator)
+    return result
+
+```
+
 ## 4 способ
 ```python
 from math import floor
