@@ -116,4 +116,25 @@ print(main(data_string2))  # [('ariin', -2621), ('requ', -6108)]
 Разобранный результат:
 
 [('soatus_925', 'rite_990'), ('esbi_285', 'xeor'), ('xeanqu', 'enbema_138')]
- 
+
+```python
+import re
+
+def main(data_string):
+    # Удаляем начальные и конечные символы
+    data_string = data_string.strip('<<< >>>')
+    
+    # Используем регулярное выражение для поиска всех пар (ключ, значение)
+    pattern = r"global\s*'([^']+)'\s*::=\s*\"([^\"]+)\""
+    matches = re.findall(pattern, data_string, re.DOTALL)
+
+    # Формируем список пар (ключ, значение)
+    return [(key, value) for key, value in matches]
+
+# Тесты
+data_string1 = "<<<block> global 'dixebi' ::= \"gera\"; </block>.<block> global 'maqued_786'::= \"geat_133\";</block>. <block> global 'xearri'::=\"inrian\"; </block>.>>>"
+data_string2 = "<< <block> global 'soatus_925' ::= \"rite_990\"; </block>. <block> global 'esbi_285' ::= \"xeor\"; </block>. <block> global 'xeanqu' ::=\"enbema_138\"; </block>.>>"
+
+print(main(data_string1))  # [('dixebi', 'gera'), ('maqued_786', 'geat_133'), ('xearri', 'inrian')]
+print(main(data_string2))  # [('soatus_925', 'rite_990'), ('esbi_285', 'xeor'), ('xeanqu', 'enbema_138')]
+```
