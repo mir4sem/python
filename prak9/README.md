@@ -82,3 +82,25 @@ def main(st):
 Разобранный результат:
 
 [('ariin', -2621), ('requ', -6108)]
+
+```python
+import re
+
+def main(data_string):
+    # Удаляем начальные и конечные теги
+    data_string = data_string.strip('<section> </section>')
+
+    # Используем регулярное выражение для поиска всех пар (ключ, значение)
+    pattern = r'variable\s+(\w+)\s*<==\s*(-?\d+)'
+    matches = re.findall(pattern, data_string, re.DOTALL)
+
+    # Формируем список пар (ключ, значение)
+    return [(key, int(value)) for key, value in matches]
+
+# Тесты
+data_string1 = "<section> |variable cema_58<==2436 |; | variable ones <== -895|;|variable aarbeus_829 <== -7973|; | variable inle <== 2394 |;</section>"
+data_string2 = "<section>| variable ariin <== -2621 |; | variable requ<== -6108 |;</section>"
+
+print(main(data_string1))  # [('cema_58', 2436), ('ones', -895), ('aarbeus_829', -7973), ('inle', 2394)]
+print(main(data_string2))  # [('ariin', -2621), ('requ', -6108)]
+```
