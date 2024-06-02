@@ -158,3 +158,30 @@ print(main(data_string2))  # [('soatus_925', 'rite_990'), ('esbi_285', 'xeor'), 
 
 {'died': [7507, -9278, -9895], 'tibi_119': [-3936, 8099, -5614], 'onlace': [1550, 2136, 8841, 7806]}
  
+```python
+import re
+
+def main(data_string):
+    # Удаляем начальные и конечные символы
+    data_string = data_string.strip('<<< >>>')
+    
+    # Используем регулярное выражение для поиска всех пар (ключ, значение)
+    pattern = r"val\s+(\w+)\s*<\|\s*\[\s*\#([^\]]+)\]"
+    matches = re.findall(pattern, data_string, re.DOTALL)
+
+    # Формируем словарь
+    result = {}
+    for key, values in matches:
+        # Разделяем числа по символу #
+        num_list = [int(num) for num in values.split('#') if num]
+        result[key] = num_list
+
+    return result
+
+# Тесты
+data_string1 = ".begin << val madi<| [ #-4605 #2267 ]>> << val atxele_250 <| [ #-8459 #8297#-6368 ] >> << val issoaen <|[ #3480#9710#-8838 #-8752 ] >> << val edarre_144 <| [ #-5727#456 #2735 ]>>.end"
+data_string2 = ".begin << val died <| [#7507 #-9278 #-9895] >><< val tibi_119 <| [#-3936 #8099 #-5614] >> << val onlace <| [#1550 #2136 #8841 #7806 ]>>.end"
+
+print(main(data_string1))  # {'madi': [-4605, 2267], 'atxele_250': [-8459, 8297, -6368], 'issoaen': [3480, 9710, -8838, -8752], 'edarre_144': [-5727, 456, 2735]}
+print(main(data_string2))  # {'died': [7507, -9278, -9895], 'tibi_119': [-3936, 8099, -5614], 'onlace': [1550, 2136, 8841, 7806]}
+```
