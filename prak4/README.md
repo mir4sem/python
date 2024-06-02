@@ -1,10 +1,10 @@
 ```python
-def f(n):
+def main(n):
     if n == 0:
         return 0.92
     elif n == 1:
         return 0.79
     else:
-        return (f(n-1))**2 - (f(n-2))**3 / 64 - f(n-1) / 63
+        return (main(n-1))**2 - (main(n-2))**3 / 64 - main(n-1) / 63
 
 ```
