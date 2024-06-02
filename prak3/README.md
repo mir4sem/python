@@ -83,3 +83,21 @@ def main(b, m, n, p):
                for k, i, j in terms)
 
 ```
+
+## 3 способ
+```python
+from functools import reduce
+import itertools
+
+
+def main(b, m, n, p):
+    ranges = [range(1, dim + 1) for dim in [b, m, n]]
+    product = itertools.product(*ranges)
+
+    def add_terms(accum, values):
+        k, i, j = values
+        term = ((1 - k ** 3) ** 6) / 8 + p + 64 * (7 + i ** 3 + 40 * j) ** 7
+        return accum + term
+    return reduce(add_terms, product, 0)
+
+```
