@@ -21,6 +21,20 @@ f([-0.21, 0.82],
 [0.97, -0.43]) ≈ 4.93e+11
 
 ```python
+import math as m
+
+
+def main(z, y, x):
+    n = len(z)
+    su = 0
+    for i in range(n):
+        su += (z[n - i - 1] ** 3 - y[n - 1 - m.floor(i / 2)] ** 2
+               - 81 * x[m.floor(i / 2)]) ** 6
+    return su
+
+```
+
+```python
 from math import floor
 
 
