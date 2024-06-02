@@ -23,6 +23,33 @@
 import re
 
 
+def main(data_string):
+    # Удаляем начальные и конечные символы
+    data_string = data_string.strip('<:> ')
+
+    # Используем регулярное выражение для поиска всех пар (ключ, значение)
+    pattern = r'var\s+(-?\d+)\s+to\s+q\(([^)]+)\)'
+    matches = re.findall(pattern, data_string, re.DOTALL)
+
+    # Формируем список пар (ключ, значение)
+    result = [(key, int(value)) for value, key in matches]
+
+    return result
+
+# Тесты
+data_string1 = "<:{{var 8780 to q(isus)}} {{ var 7664 to q(soon_686) }} {{ var 159 to q(isor_517)}} :>"
+data_string2 = "<: {{var -6573 to q(enbe) }} {{ var -4380 to q(quteri_319) }} {{ var -4676 to q(maed_661)}}{{ var 56 to q(biarra)}}:>"
+data_string3 = "<:{{var 8780 to q(isus)}} {{ var 7664 to q(soon_686) }} {{ var 159 to\nq(isor_517)}} :>"
+
+print(main(data_string1))  # [('isus', 8780), ('soon_686', 7664), ('isor_517', 159)]
+print(main(data_string2))  # [('enbe', -6573), ('quteri_319', -4380), ('maed_661', -4676), ('biarra', 56)]
+print(main(data_string3))  # [('isus', 8780), ('soon_686', 7664), ('isor_517', 159)]
+```
+
+```python
+import re
+
+
 def main(st):
     var = re.findall(r"var\s(-?\d+)", st)
     q = re.findall(r"q\((\w+)\)", st)
