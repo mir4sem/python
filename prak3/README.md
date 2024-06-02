@@ -68,4 +68,18 @@ def main(b, m, n, p):
                for j in range(1, n + 1)
                for i in range(1, m + 1)
                for k in range(1, b + 1))
+
+```
+
+```python
+from itertools import product
+
+
+def main(b, m, n, p):
+    terms = product(range(1, b + 1),
+                    range(1, m + 1), range(1, n + 1))
+    return sum(((1 - k ** 3) ** 6) /
+               8 + p + 64 * (7 + i ** 3 + 40 * j) ** 7
+               for k, i, j in terms)
+
 ```
