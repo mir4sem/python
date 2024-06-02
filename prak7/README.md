@@ -56,7 +56,7 @@ def main(x):
 ```
 
 ### Когнитивно сложный код 12 > 10
-```
+```python
 def main(x):
     decision_tree = {
         'HAML': {
