@@ -18,3 +18,17 @@
 Разобранный результат:
 
 [('enbe', -6573), ('quteri_319', -4380), ('maed_661', -4676), ('biarra', 56)]
+
+```python
+import re
+ 
+ 
+def main(st):
+    var = re.findall(r"var\s(-?\d+)", st)
+    q = re.findall(r"q\((\w+)\)", st)
+    res = []
+    for i in range(len(var)):
+        res.append((q[i], int(var[i])))
+    return res
+
+```
