@@ -112,3 +112,55 @@ print(transform_table(table2))
 ![image](https://github.com/mir4sem/python/assets/70198995/0a970ace-0db2-489a-90db-266fd9b8513f)
 
 ![image](https://github.com/mir4sem/python/assets/70198995/0847a37d-0b60-44c9-adee-a629221145dc)
+
+```python
+def main(table):
+    # Удаление дубликатов строк
+    seen = set()
+    unique_table = []
+    for row in table:
+        row_tuple = tuple(row)
+        if row_tuple not in seen:
+            seen.add(row_tuple)
+            unique_table.append(row)
+
+    # Преобразование содержимого ячеек
+    transformed_table = []
+    for row in unique_table[1:]:
+        email_phone, name = row
+        email, phone = email_phone.split('&')
+        email = email.replace('[at]', '@')
+        
+        # Удаляем код страны и скобки из номера телефона
+        phone = ''.join(filter(str.isdigit, phone.split(' ', 2)[2]))
+        
+        name = ' '.join(name.split()[::-1])
+        transformed_table.append([email, phone, name])
+
+    # Добавление заголовка
+    transformed_table.insert(0, ['1', '2', '3'])
+
+    return transformed_table
+
+# Тесты
+table1 = [
+    ['1', '2'],
+    ['evgenij60[at]yandex.ru&+7 (655) 372-21-12', 'Евгений Безучко'],
+    ['evgenij60[at]yandex.ru&+7 (655) 372-21-12', 'Евгений Безучко'],
+    ['marat98[at]yandex.ru&+7 (086) 292-72-09', 'Марат Фикяк'],
+    ['evgenij60[at]yandex.ru&+7 (655) 372-21-12', 'Евгений Безучко'],
+    ['artem85[at]rambler.ru&+7 (254) 314-46-46', 'Артем Бивак']
+]
+
+table2 = [
+    ['1', '2'],
+    ['semuzidi49[at]rambler.ru&+7 (807) 907-52-20', 'Даниил Шемузиди'],
+    ['andrej29[at]yandex.ru&+7 (039) 638-52-27', 'Андрей Детян'],
+    ['kesanskij86[at]yandex.ru&+7 (004) 321-64-27', 'Тимофей Кесанский'],
+    ['kesanskij86[at]yandex.ru&+7 (004) 321-64-27', 'Тимофей Кесанский'],
+    ['kesanskij86[at]yandex.ru&+7 (004) 321-64-27', 'Тимофей Кесанский']
+]
+
+print(main(table1))
+print(main(table2))
+```
