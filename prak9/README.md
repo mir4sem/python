@@ -111,7 +111,7 @@ print(main(data_string2))  # [('ariin', -2621), ('requ', -6108)]
 
 Пример 2 Входная строка:
 
-`<< <block> global 'soatus_925' ::= "rite_990"; </block>. <block> global 'esbi_285' ::= "xeor"; </block>. <block> global 'xeanqu' ::="enbema_138"; </block>.>>
+`<< <block> global 'soatus_925' ::= "rite_990"; </block>. <block> global 'esbi_285' ::= "xeor"; </block>. <block> global 'xeanqu' ::="enbema_138"; </block>.>>`
 
 Разобранный результат:
 
