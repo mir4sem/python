@@ -19,3 +19,19 @@ f([-0.86, 0.63],
 f([-0.21, 0.82],
 [1.0, 0.94],
 [0.97, -0.43]) ≈ 4.93e+11
+
+```python
+from math import floor
+
+
+def main(z, y, x):
+    n = len(z)
+    result = 0
+    for i in range(1, n + 1):
+        z_index = n - i
+        y_index = n - floor((i - 1) / 2) - 1
+        x_index = floor((i - 1) / 2)
+        result += (z[z_index] ** 3 - y[y_index] ** 2 - 81 * x[x_index]) ** 6
+    return result
+
+```
