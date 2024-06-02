@@ -109,3 +109,6 @@ print(transform_table(table2))
 ```
 
 # 1 вариант
+![image](https://github.com/mir4sem/python/assets/70198995/0a970ace-0db2-489a-90db-266fd9b8513f)
+
+![image](https://github.com/mir4sem/python/assets/70198995/0847a37d-0b60-44c9-adee-a629221145dc)
