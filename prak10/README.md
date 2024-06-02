@@ -164,3 +164,9 @@ table2 = [
 print(main(table1))
 print(main(table2))
 ```
+
+# 2 вариант
+![image](https://github.com/mir4sem/python/assets/70198995/1af89151-4573-43e5-8f2a-cb0a68f2364a)
+
+![image](https://github.com/mir4sem/python/assets/70198995/fbcdcc44-2c1b-4111-a0e4-1e1132b7649a)
+
