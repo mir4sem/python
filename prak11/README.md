@@ -44,8 +44,8 @@ o.erase() # 2
 ```python
 class MealyError(Exception):
     pass
- 
- 
+
+
 def raises(function, error):
     output = None
     try:
@@ -53,8 +53,8 @@ def raises(function, error):
     except Exception as e:
         assert type(e) == error
     assert output is None
- 
- 
+
+
 class StateMachine:
     def __init__(self):
         self.state = "A"
@@ -80,7 +80,7 @@ class StateMachine:
             return 7
         else:
             raise MealyError("scan")
- 
+
     def erase(self):
         if self.state == "B":
             self.state = "G"
@@ -93,19 +93,19 @@ class StateMachine:
             return 9
         else:
             raise MealyError("erase")
- 
+
     def get(self):
         if self.state == "F":
             self.state = "A"
             return 8
         else:
             raise MealyError("get")
- 
- 
+
+
 def main():
     return StateMachine()
- 
- 
+
+
 def test():
     o = main()
     assert o.scan() == 0
@@ -115,7 +115,7 @@ def test():
     assert o.scan() == 6
     assert o.erase() == 9
     assert o.scan() == 7
- 
+
     o = main()
     o.state = "D"
     assert o.erase() == 5
@@ -127,7 +127,7 @@ def test():
     o = main()
     o.state = "F"
     assert o.get() == 8
- 
+
     o = main()
     raises(lambda: o.get(), MealyError)
     raises(lambda: o.erase(), MealyError)
