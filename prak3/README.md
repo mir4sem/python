@@ -1,3 +1,5 @@
+![image](https://github.com/mir4sem/python/assets/70198995/105273c2-5b35-4c4a-99ec-6fd2815b5428)
+
 ## 1 способ
 ```python
 def main(b, m, n, p):
