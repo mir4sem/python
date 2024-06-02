@@ -39,6 +39,23 @@ def main(n):
 
 ```
 
+```python
+def main(n):
+    def f():
+        a, b = 0.92, 0.79
+        yield a
+        yield b
+        while True:
+            a, b = b, b**2 - a**3 / 64 - b / 63
+            yield b
+
+    gen = f()
+    for _ in range(n+1):
+        result = next(gen)
+    return result
+
+```
+
 ## 2 способ
 ```python
 def main(n):
