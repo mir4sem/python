@@ -299,3 +299,162 @@ def test():
 test()
 
 ```
+
+# Вариант 1
+![image](https://github.com/mir4sem/python/assets/70198995/a6584d0f-9305-44de-bece-b78b32af5e4b)
+
+Пример 1
+
+```
+o = main()
+o.slip() # 0
+o.hop() # 2
+o.scan() # 3
+o.scan() # 6
+o.hop() # 2
+o.scan() # 3
+o.slip() # 4
+o.scan() # 8
+o.hop() # MealyError
+o.scan() # 1
+```
+
+Пример 2
+
+```
+o = main()
+o.slip() # 0
+o.hop() # 2
+o.scan() # 3
+o.scan() # 6
+o.hop() # 2
+o.slip() # MealyError
+o.scan() # 3
+o.slip() # 4
+o.scan() # 8
+o.scan() # 1
+```
+
+```python
+class MealyError(Exception):
+    def __init__(self, method_name):
+        self.method_name = method_name
+
+    def __str__(self):
+        return f"MealyError: {self.method_name} method called in invalid state"
+
+
+class MealyMachine:
+    def __init__(self):
+        self.state = 'A'
+
+    def slip(self):
+        if self.state == 'A':
+            self.state = 'B'
+            return 0
+        elif self.state == 'D':
+            self.state = 'E'
+            return 4
+        else:
+            raise MealyError("slip")
+
+    def hop(self):
+        if self.state == 'A':
+            self.state = 'D'
+            return 5
+        elif self.state == 'B':
+            self.state = 'C'
+            return 2
+        elif self.state == 'E':
+            self.state = 'F'
+            return 7
+        else:
+            raise MealyError("hop")
+
+    def scan(self):
+        if self.state == 'B':
+            self.state = 'D'
+            return 6
+        elif self.state == 'C':
+            self.state = 'C'
+            return 3
+        elif self.state == 'E':
+            self.state = 'C'
+            return 8
+        elif self.state == 'F':
+            self.state = 'A'
+            return 1
+        else:
+            raise MealyError("scan")
+
+
+def main():
+    return MealyMachine()
+
+
+def raises(function, error):
+    output = None
+    try:
+        output = function()
+    except Exception as e:
+        assert type(e) == error
+    assert output is None
+
+
+def test():
+    o = main()
+    assert o.slip() == 0
+    assert o.hop() == 2
+    assert o.scan() == 3
+    assert o.scan() == 3
+    assert o.scan() == 3
+    assert o.scan() == 3
+    raises(lambda: o.slip(), MealyError)
+    raises(lambda: o.hop(), MealyError)
+    assert o.scan() == 3
+    o = main()
+    assert o.slip() == 0
+    assert o.hop() == 2
+    assert o.scan() == 3
+    assert o.scan() == 3
+    assert o.scan() == 3
+    assert o.scan() == 3
+    raises(lambda: o.slip(), MealyError)
+    raises(lambda: o.hop(), MealyError)
+    assert o.scan() == 3
+    o = main()
+    assert o.slip() == 0
+    assert o.hop() == 2
+    assert o.scan() == 3
+    assert o.scan() == 3
+    assert o.scan() == 3
+    assert o.scan() == 3
+    raises(lambda: o.slip(), MealyError)
+    raises(lambda: o.hop(), MealyError)
+    assert o.scan() == 3
+    o = main()
+    assert o.slip() == 0
+    assert o.hop() == 2
+    assert o.scan() == 3
+    assert o.scan() == 3
+    assert o.scan() == 3
+    assert o.scan() == 3
+    raises(lambda: o.slip(), MealyError)
+    raises(lambda: o.hop(), MealyError)
+    assert o.scan() == 3
+
+    o = main()
+    assert o.slip() == 0
+    assert o.hop() == 2
+    assert o.scan() == 3
+    assert o.scan() == 3
+    assert o.scan() == 3
+    assert o.scan() == 3
+    raises(lambda: o.slip(), MealyError)
+    raises(lambda: o.hop(), MealyError)
+    assert o.scan() == 3
+
+
+test()
+
+```
