@@ -21,8 +21,8 @@
 
 ```python
 import re
- 
- 
+
+
 def main(st):
     var = re.findall(r"var\s(-?\d+)", st)
     q = re.findall(r"q\((\w+)\)", st)
