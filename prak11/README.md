@@ -58,7 +58,7 @@ def raises(function, error):
 class StateMachine:
     def __init__(self):
         self.state = "A"
- 
+
     def scan(self):
         if self.state == "A":
             self.state = "B"
@@ -123,7 +123,7 @@ def test():
     o = main()
     o.state = "B"
     assert o.erase() == 2
- 
+
     o = main()
     o.state = "F"
     assert o.get() == 8
