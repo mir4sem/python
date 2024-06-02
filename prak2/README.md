@@ -247,6 +247,34 @@ def main(y):
     return f(y)
 ```
 
+```python
+import math
+
+
+def piecewise(cases):
+    def decorator(func):
+        def wrapper(y):
+            for (cond, result) in cases:
+                if cond(y):
+                    return result(y)
+            return func(y)
+        return wrapper
+    return decorator
+
+
+@piecewise([
+    (lambda y: y < 70, lambda y: ((y**3 / 37) + 1) /
+     3 - 44 * (73 * y**3 - 1)**6),
+    (lambda y: 70 <= y < 158, lambda y: 1 + (5 * y**2 - y - y**3)**3 + 60 * y),
+    (lambda y: 158 <= y < 251, lambda y: 0.08 - 72 *
+     abs(y**3) - 33 * math.tan(y**3 / 91 + 41 * y**2 + 76)**5),
+    (lambda y: 251 <= y < 320, lambda y: y**4 + 70 * y**7)
+])
+def main(y):
+    return 5 * (y - (y**2 / 4))**4 + 1
+
+```
+
 ### 3 способ
 ```python
 import math
