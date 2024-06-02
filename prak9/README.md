@@ -67,9 +67,9 @@ def main(st):
 
 Входная строка:
 
-<section> |variable cema_58<==2436 |; | variable ones <== -895|;|variable aarbeus_829 <== -7973|; | variable inle <== 2394 |;</section>
+`<section> |variable cema_58<==2436 |; | variable ones <== -895|;|variable aarbeus_829 <== -7973|; | variable inle <== 2394 |;</section>`
 
-    Разобранный результат:
+Разобранный результат:
 
 [('cema_58', 2436), ('ones', -895), ('aarbeus_829', -7973), ('inle', 2394)]
 
@@ -77,7 +77,7 @@ def main(st):
 
 Входная строка:
 
-<section>| variable ariin <== -2621 |; | variable requ<==-6108 |;</section>
+`<section>| variable ariin <== -2621 |; | variable requ<==-6108 |;</section>`
 
 Разобранный результат:
 
