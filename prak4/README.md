@@ -26,3 +26,13 @@ def main(n):
         return (main(n-1))**2 - (main(n-2))**3 / 64 - main(n-1) / 63
 
 ```
+
+## 3 способ
+```python
+def main(n):
+    results = [0.92, 0.79] + [0] * (n-1)
+    for i in range(2, n+1):
+        results[i] = results[i-1]**2 - results[i-2]**3 / 64 - results[i-1] / 63
+    return results[n]
+
+```
