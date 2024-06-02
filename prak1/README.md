@@ -1,3 +1,5 @@
+![изображение](https://github.com/mir4sem/python/assets/70198995/7386b426-6bfd-4955-8f2f-0edd7dac1760)
+
 ## 1 способ
 ```python
 import math
