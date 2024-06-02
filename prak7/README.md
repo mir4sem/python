@@ -20,15 +20,16 @@ def x0(x, left, mid, right):
         return left
     elif x[0] == "PERL":
         return mid
-    elif x[0] == "VHDL": 
+    elif x[0] == "VHDL":
         return right
-        
+
+
 def x1(x, left, mid, right):
     if x[1] == "METAL":
         return left
     elif x[1] == "TXL":
         return mid
-    elif x[1] == "JSON5": 
+    elif x[1] == "JSON5":
         return right
 
 
@@ -49,5 +50,7 @@ def x3(x, left, mid, right):
 
 
 def main(x):
-    return x0(x, x2(x, x1(x, 0, 1, 2), x1(x, 3, 4, 5)), 6, x2(x, x3(x, 7, 8, 9), 10))
+    return x0(x, x2(x, x1(x, 0, 1, 2),
+                    x1(x, 3, 4, 5)), 6, x2(x, x3(x, 7, 8, 9), 10))
+
 ```
