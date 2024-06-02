@@ -71,3 +71,24 @@ def main(z, y, x):
     return result
 
 ```
+
+## 4 способ
+```python
+from math import floor
+
+
+def recursive_sum(z, y, x, i, n):
+    if i > n:
+        return 0
+    z_index = n - i
+    y_index = n - floor((i - 1) / 2) - 1
+    x_index = floor((i - 1) / 2)
+    current_value = (z[z_index] ** 3 - y[y_index] ** 2 - 81 * x[x_index]) ** 6
+    return current_value + recursive_sum(z, y, x, i + 1, n)
+
+
+def main(z, y, x):
+    n = len(z)
+    return recursive_sum(z, y, x, 1, n)
+
+```
