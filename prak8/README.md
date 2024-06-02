@@ -37,11 +37,11 @@ main('8283508376')
 ```python
 def main(data):
     num = int(data)
-    E1 = num & 0xFF  # Биты 0-7
-    E2 = (num >> 8) & 0xFF  # Биты 8-15
-    E3 = (num >> 16) & 0x7  # Биты 16-19
-    E5 = (num >> 20) & 0x3FF  # Биты 20-29
-    E6 = (num >> 30) & 0xF  # Биты 30-33
+    E1 = num & 0xFF  # смещение 0 (нет)
+    E2 = (num >> 8) & 0xFF  # смещение 8
+    E3 = (num >> 16) & 0x7  # смещение 16
+    E5 = (num >> 20) & 0x3FF  #  смещение 20
+    E6 = (num >> 30) & 0xF  # смещение 30
     E1_hex = hex(E1)
     E2_hex = hex(E2)
     E3_hex = hex(E3)
