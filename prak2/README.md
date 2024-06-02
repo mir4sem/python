@@ -275,6 +275,28 @@ def main(y):
 
 ```
 
+### 2 способ
+```python
+import math
+
+
+def main(y):
+    conditions = [
+        (lambda x: x < 70, lambda x:
+         ((x**3 / 37) + 1) / 3 - 44 * (73 * x**3 - 1)**6),
+        (lambda x: 70 <= x < 158, lambda x:
+         1 + (5 * x**2 - x - x**3)**3 + 60 * x),
+        (lambda x: 158 <= x < 251, lambda x:
+         0.08 - 72 * abs(x**3) - 33 * math.tan(x**3 / 91 + 41 * x**2 + 76)**5),
+        (lambda x: 251 <= x < 320, lambda x:
+         x**4 + 70 * x**7),
+        (lambda x: x >= 320, lambda x:
+         5 * (x - (x**2 / 4))**4 + 1)
+    ]
+
+    return next(result(y) for condition, result in conditions if condition(y))
+```
+
 ### 3 способ
 ```python
 import math
