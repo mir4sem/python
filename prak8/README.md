@@ -176,3 +176,6 @@ print(main(('0x3', '0x7', '0x71', '0x12', '0x27'))) # Ожидается: '81938
 print(main(('0x7', '0x4', '0xe', '0xbe', '0x1d')))  # Ожидается: '62374311'
 print(main(('0x0', '0x1', '0x1b', '0x67', '0x34'))) # Ожидается: '109897408'
 ```
+
+# 5 вариант
+![image](https://github.com/mir4sem/python/assets/70198995/9b8fb5de-518f-4210-b9af-c12e0e4de1c9)
