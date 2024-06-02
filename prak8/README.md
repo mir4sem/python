@@ -26,6 +26,22 @@ main('8283508376')
 <br>
 ('0x98', '0x4e', '0x4', '0x2db', '0x7')
 
+```python
+def main(data):
+    num = int(data)
+    E1 = num & 0xFF  # Биты 0-7
+    E2 = (num >> 8) & 0xFF  # Биты 8-15
+    E3 = (num >> 16) & 0x7  # Биты 16-19
+    E5 = (num >> 20) & 0x3FF  # Биты 20-29
+    E6 = (num >> 30) & 0xF  # Биты 30-33
+    E1_hex = hex(E1)
+    E2_hex = hex(E2)
+    E3_hex = hex(E3)
+    E5_hex = hex(E5)
+    E6_hex = hex(E6)
+    return (E1_hex, E2_hex, E3_hex, E5_hex, E6_hex)
+
+```
 
 ```python
 def main(input_string):
