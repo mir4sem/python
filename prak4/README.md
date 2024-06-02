@@ -24,6 +24,15 @@ def main(n):
         return 0.79
     else:
         return (main(n-1))**2 - (main(n-2))**3 / 64 - main(n-1) / 63
+```
+
+## 2 способ
+```python
+def main(n):
+    a, b = 0.92, 0.79
+    for i in range(2, n+1):
+        a, b = b, b**2 - a**3 / 64 - b / 63
+    return b
 
 ```
 
