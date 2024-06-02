@@ -147,3 +147,155 @@ def test():
     raises(lambda: o.get(), MealyError)
 
 ```
+
+### Недостаточное тестовое покрытие ветвей (98.6667%)
+```python
+class MealyError(Exception):
+    def __init__(self, method_name):
+        self.method_name = method_name
+
+    def __str__(self):
+        return f"MealyError: {self.method_name} method called in invalid state"
+
+
+class MealyMachine:
+    def __init__(self):
+        self.state = 'A'
+
+    def scan(self):
+        if self.state == 'A':
+            self.state = 'B'
+            return 0
+        elif self.state == 'B':
+            self.state = 'C'
+            return 1
+        elif self.state == 'C':
+            self.state = 'D'
+            return 3
+        elif self.state == 'D':
+            self.state = 'E'
+            return 4
+        elif self.state == 'E':
+            self.state = 'F'
+            return 6
+        elif self.state == 'F':
+            self.state = 'G'
+            return 7
+        elif self.state == 'G':
+            self.state = 'A'
+            return 0
+        else:
+            raise MealyError("scan")
+
+    def erase(self):
+        if self.state == 'B':
+            self.state = 'A'
+            return 2
+        elif self.state == 'D':
+            self.state = 'G'
+            return 5
+        elif self.state == 'F':
+            self.state = 'G'
+            return 9
+        elif self.state == 'G':
+            self.state = 'G'
+            return 9
+        else:
+            raise MealyError("erase")
+
+    def get(self):
+        if self.state == 'D':
+            self.state = 'A'
+            return 8
+        else:
+            raise MealyError("get")
+
+
+def main():
+    return MealyMachine()
+
+
+def test_scan():
+    o = main()
+    assert o.scan() == 0  # A -> B
+    assert o.scan() == 1  # B -> C
+    assert o.scan() == 3  # C -> D
+    assert o.scan() == 4  # D -> E
+    assert o.scan() == 6  # E -> F
+    assert o.scan() == 7  # F -> G
+    assert o.scan() == 0  # G -> A
+
+
+def test_erase():
+    o = main()
+    try:
+        o.erase()  # A -> MealyError
+    except MealyError as e:
+        assert str(e) == "MealyError: erase method called in invalid state"
+    assert o.scan() == 0  # A -> B
+    assert o.erase() == 2  # B -> A
+    assert o.scan() == 0  # A -> B
+    assert o.scan() == 1  # B -> C
+    assert o.scan() == 3  # C -> D
+    assert o.erase() == 5  # D -> G
+    assert o.scan() == 0  # G -> A
+    assert o.scan() == 0  # A -> B
+    assert o.scan() == 1  # B -> C
+    assert o.scan() == 3  # C -> D
+    assert o.scan() == 4  # D -> E
+    assert o.scan() == 6  # E -> F
+    assert o.erase() == 9  # F -> G
+    assert o.erase() == 9  # G -> G
+
+
+def test_get():
+    o = main()
+    try:
+        o.get()  # A -> MealyError
+    except MealyError as e:
+        assert str(e) == "MealyError: get method called in invalid state"
+    assert o.scan() == 0  # A -> B
+    try:
+        o.get()  # B -> MealyError
+    except MealyError as e:
+        assert str(e) == "MealyError: get method called in invalid state"
+    assert o.scan() == 1  # B -> C
+    try:
+        o.get()  # C -> MealyError
+    except MealyError as e:
+        assert str(e) == "MealyError: get method called in invalid state"
+    assert o.scan() == 3  # C -> D
+    assert o.get() == 8  # D -> A
+    try:
+        o.get()  # A -> MealyError
+    except MealyError as e:
+        assert str(e) == "MealyError: get method called in invalid state"
+    assert o.scan() == 0  # A -> B
+    assert o.scan() == 1  # B -> C
+    assert o.scan() == 3  # C -> D
+    assert o.scan() == 4  # D -> E
+    try:
+        o.get()  # E -> MealyError
+    except MealyError as e:
+        assert str(e) == "MealyError: get method called in invalid state"
+    assert o.scan() == 6  # E -> F
+    try:
+        o.get()  # F -> MealyError
+    except MealyError as e:
+        assert str(e) == "MealyError: get method called in invalid state"
+    assert o.erase() == 9  # F -> G
+    try:
+        o.get()  # G -> MealyError
+    except MealyError as e:
+        assert str(e) == "MealyError: get method called in invalid state"
+
+
+def test():
+    test_scan()
+    test_erase()
+    test_get()
+
+
+test()
+
+```
