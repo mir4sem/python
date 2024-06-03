@@ -152,7 +152,7 @@ print(main(('0x0', '0x1', '0x1b', '0x67', '0x34'))) # Ожидается: '10989
 ```
 
 # 5 вариант
-![image](https://github.com/mir4sem/python/assets/70198995/9b8fb5de-518f-4210-b9af-c12e0e4de1c9)
+![image](https://github.com/mir4sem/python/assets/70198995/06c69baf-28e0-4d6e-a829-5264125319b3)
 
 ```python
 def main(data):
@@ -182,6 +182,7 @@ print(main('1660895'))  # Ожидается: 2095914
 print(main('1033969'))  # Ожидается: 1170936
 ```
 
+# 6 вариант
 ![image](https://github.com/mir4sem/python/assets/70198995/b1b8f96d-763f-41b1-bf7e-ffcbcec00114)
 
 ```python
