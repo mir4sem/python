@@ -68,7 +68,7 @@ print(main(('12', '0', '13', '2'))) # '0x21ac'
 ```
 
 # 2 вариант
-![image](https://github.com/mir4sem/python/assets/70198995/0585a625-017e-4d7c-9969-609f904d109e)
+![image](https://github.com/mir4sem/python/assets/70198995/051ad5a7-606f-4cfb-818c-b1d28d18e109)
 
 ```python
 def main(num):
@@ -90,7 +90,7 @@ print(main(549))     # [('F1', 37), ('F2', 4), ('F3', 0)]
 ```
 
 # 3 вариант
-![image](https://github.com/mir4sem/python/assets/70198995/7793b74c-57d6-486e-9b65-4f5f1be3eef3)
+![image](https://github.com/mir4sem/python/assets/70198995/2c001b62-ae95-4f27-a642-ccd5af3750f1)
 
 ```python
 def main(fields):
@@ -121,7 +121,7 @@ print(main([('L2', '0x15'), ('L3', '0x7'), ('L4', '0x397')]))  # 7528938
 ```
 
 # 4 вариант
-![image](https://github.com/mir4sem/python/assets/70198995/de492864-bc34-4772-8b29-36126c587e09)
+![image](https://github.com/mir4sem/python/assets/70198995/0abacfca-4d88-4f60-81c8-4d6fd60e9c82)
 
 ```python
 def main(fields):
