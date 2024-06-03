@@ -264,7 +264,7 @@ def main(fields):
     result = I1 | I2 | I3
 
     # Возвращаем результат в виде десятичной строки
-    return str(result)
+    return result
 
 # Тесты
 print(main((2, 117, 1)))  # Ожидается: '5034'
