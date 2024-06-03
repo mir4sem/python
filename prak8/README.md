@@ -208,7 +208,7 @@ print(main('1660895'))  # Ожидается: 2095914
 print(main('1033969'))  # Ожидается: 1170936
 ```
 
-![image](https://github.com/mir4sem/python/assets/70198995/62d277b0-43c3-4d1d-86f6-0db08d3a9687)
+![image](https://github.com/mir4sem/python/assets/70198995/b1b8f96d-763f-41b1-bf7e-ffcbcec00114)
 
 ```python
 def main(fields):
