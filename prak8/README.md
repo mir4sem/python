@@ -238,7 +238,7 @@ def main(fields):
     result = M1 | M2 | M3 | M5
 
     # Возвращаем результат в виде десятичной строки
-    return str(result)
+    return result
 
 # Тесты
 print(main({'M1': 169, 'M2': 202, 'M3': 25, 'M5': 1}))  # Ожидается: '270125737'
