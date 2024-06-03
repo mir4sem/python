@@ -41,7 +41,7 @@ def main(input_string):
 ```
 
 # 1 Вариант
-![image](https://github.com/mir4sem/python/assets/70198995/596a949b-1417-49f3-985b-6d4000c80c4f)
+![image](https://github.com/mir4sem/python/assets/70198995/017acbc1-94d9-49be-af5b-13f7aadd1ede)
 
 ```python
 def main(data):
