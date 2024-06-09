@@ -141,6 +141,53 @@ print(main(Θ1))
 print(main(Θ2)) 
 ```
 
+![image](https://github.com/mir4sem/python/assets/70198995/08085229-ccea-4ecf-8617-724fb39523dd)
+
+```python
+import math
+import numpy as np
+
+def main(B):
+    Δ = {
+        math.ceil(beta / 2) + 8 * beta
+        for beta in B
+        if beta >= 5
+    }
+
+    X = {
+        abs(beta)
+        for beta in B
+        if beta < 87 or beta >= -27
+    }
+
+    I = Δ.union(X)
+
+    Z = {
+        math.floor(chi / 3) - iota
+        for chi in X
+        for iota in I
+        if chi <= iota
+    }
+
+    union_I_Z = I.union(Z)
+    lenIZ = len(union_I_Z)
+
+    PROD = np.prod([
+        zeta % 3
+        for zeta in Z
+    ])
+
+    result = lenIZ + PROD
+
+    return result
+
+B1 = {97, -28, 9, 44, 12, -82, 51, 62, -67, -1}
+B2 = {32, 75, -50, 16, -79, 49, 22, 59, -68}
+
+print(main(B1)) # 108
+print(main(B2)) # 96
+```
+
 ![image](https://github.com/mir4sem/python/assets/70198995/543c5be6-87eb-4ea6-a351-e6aacc26e68c)
 
 Примеры результатов вычислений:
