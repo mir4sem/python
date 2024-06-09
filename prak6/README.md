@@ -1,3 +1,51 @@
+![image](https://github.com/mir4sem/python/assets/70198995/02055f93-030a-43d0-a2b8-abf3ede72fa7)
+
+```python
+import math
+
+def main(Theta):
+    Psi = {
+        theta
+        for theta in Theta
+        if theta <= 54
+    }
+    
+    X = {
+        math.ceil(psi / 4) - psi
+        for psi in Psi
+        if -66 < psi <= 52
+    }
+        
+    Delta = {
+        abs(theta) - math.floor(theta / 5)
+        for theta in Theta
+        if -64 <= theta < 41
+    }
+    
+    N = {
+        delta**3 + chi
+        for delta in Delta
+        for chi in X
+        if delta > chi
+    }
+
+    sum_X = sum(X)
+    sum_XN = sum(
+        chi * nu
+        for chi in X
+        for nu in N
+    )
+    
+    xi = sum_X + sum_XN
+    return xi
+
+Theta1 = {98, 69, -90, 41, 74, 46, 25, -70, -67, 62}
+Theta2 = {-63, -6, 70, -20, -16, -14, 83, -40, -70, -97}
+
+print(main(Theta1)) # -1961358
+print(main(Theta2)) # 398647205
+```
+
 ![image](https://github.com/mir4sem/python/assets/70198995/543c5be6-87eb-4ea6-a351-e6aacc26e68c)
 
 Примеры результатов вычислений:
