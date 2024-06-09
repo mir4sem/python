@@ -5,3 +5,4 @@
 - https://github.com/SunnyientDev/all_courses
 - https://github.com/yunikeil/kispython
 - https://github.com/Mike-Like11/python-practice
+- https://gist.github.com/worldbeater/79bb9f80ce444757784f5f4cd01797b4
