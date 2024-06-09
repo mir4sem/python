@@ -125,11 +125,7 @@ def main(Θ):
         if lam < v
     }
 
-    sum_Υ = sum(5 * v for v in Υ)
-
-    sum_ΥZ = sum(abs(v) + zeta**2 for v in Υ for zeta in Z)
-
-    rho = sum_Υ + sum_ΥZ
+    rho = sum(5*v for v in Υ) + sum(abs(v) + zeta**2 for v in Υ for zeta in Z)
 
     return rho
 
@@ -211,9 +207,7 @@ def main(Δ):
 
     product_P_Λ = len(P) * len(Λ)
 
-    sum_P_Λ = sum(rho * lam for rho in P for lam in Λ)
-
-    tau = product_P_Λ + sum_P_Λ
+    tau = product_P_Λ + sum(rho * lam for rho in P for lam in Λ)
 
     return tau
 
