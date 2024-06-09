@@ -341,3 +341,24 @@ print(main('7292728'))   # Ожидается: '5315571'
 # 12 вариант
 ![image](https://github.com/mir4sem/python/assets/70198995/f684e02f-d671-4d49-b7a0-00426861937b)
 
+```python
+def main(hex_string):
+    number = int(hex_string, 16)
+    
+    B2 = (number >> 10) & 0xFF
+    B3 = (number >> 18) & 0x1FF
+    B4 = (number >> 27) & 0x3FF
+
+    B2 <<= 9
+    B3 <<= 0
+    B4 <<= 27 
+
+    result = B2 | B3 | B4
+    return str(result)
+    
+print(main('0x19129d602f'))  # Ожидается: '107642663079'
+print(main('0xebb6d7087'))  # Ожидается: '63216597211'
+print(main('0x14d2a70063'))  # Ожидается: '89389105321'
+```
+
+
