@@ -1,3 +1,9 @@
+![image](https://github.com/mir4sem/python/assets/70198995/8ecba489-f697-4710-ab2d-5657bcc531bb)
+
+```python
+
+```
+
 Реализовать функцию для вычисления дерева решений:
 
 ![image](https://github.com/mir4sem/python/assets/70198995/57b59551-b872-4ad1-9cef-7f3c1dcca4c2)
