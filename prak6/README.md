@@ -94,6 +94,53 @@ print(main(T1))  # 49762
 print(main(T2))  # 22831
 ```
 
+![image](https://github.com/mir4sem/python/assets/70198995/a10a054f-f629-494f-aaa8-02664083a65b)
+
+```python
+import math
+
+def main(Θ):
+    B = {
+        theta + 2 * theta
+        for theta in Θ
+        if -58 <= theta < 5
+    }
+
+    Υ = {
+        math.floor(beta / 2)
+        for beta in B
+        if -98 < beta < -27
+    }
+
+    Λ = {
+        9 * theta + 4 * theta
+        for theta in Θ
+        if -57 < theta <= 81
+    }
+
+    Z = {
+        lam * v
+        for lam in Λ
+        for v in Υ
+        if lam < v
+    }
+
+    sum_Υ = sum(5 * v for v in Υ)
+
+    sum_ΥZ = sum(abs(v) + zeta**2 for v in Υ for zeta in Z)
+
+    rho = sum_Υ + sum_ΥZ
+
+    return rho
+
+# Пример использования
+Θ1 = {-96, -29, -58, 41, 74, 79, 50, 85, -42, -4} # 857549176
+Θ2 = {32, -32, -61, -60, -85, 49, 52, -10, 91, 28} # 882922122
+
+print(main(Θ1)) 
+print(main(Θ2)) 
+```
+
 ![image](https://github.com/mir4sem/python/assets/70198995/543c5be6-87eb-4ea6-a351-e6aacc26e68c)
 
 Примеры результатов вычислений:
