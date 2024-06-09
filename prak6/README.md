@@ -46,6 +46,54 @@ print(main(Theta1)) # -1961358
 print(main(Theta2)) # 398647205
 ```
 
+![image](https://github.com/mir4sem/python/assets/70198995/44d68119-5c52-40a9-87a1-43325004435b)
+
+```python
+import math
+
+def main(T):
+    E = {
+        math.ceil(tau / 2)
+        for tau in T
+        if -72 <= tau or tau <= 48
+    }
+
+    O = T.union(E)
+
+    K = {
+        abs(epsilon)
+        for epsilon in E
+        if -66 < epsilon < 45
+    }
+
+    Υ = {
+        o for o in O
+        if -47 < o <= -6
+    }
+
+    sum_K = sum(
+        2 * kappa
+        for kappa in K
+    )
+
+    sum_KY = sum(
+        kappa**2 - nu % 3
+        for kappa in K
+        for nu in Υ
+    )
+    
+    phi = sum_K + sum_KY
+    
+    return phi
+
+# Example usage
+T1 = {-93, -92, -91, 68, -52, -18, -49, 19, -37}
+T2 = {-62, 35, 6, 79, 17, -73, 88, 26, -67}
+
+print(main(T1))  # 49762
+print(main(T2))  # 22831
+```
+
 ![image](https://github.com/mir4sem/python/assets/70198995/543c5be6-87eb-4ea6-a351-e6aacc26e68c)
 
 Примеры результатов вычислений:
