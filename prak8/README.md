@@ -409,3 +409,23 @@ print(main({'R1': '0xa', 'R2': '0x0', 'R3': '0x1d3', 'R4': '0x1', 'R5': '0x2'}))
 print(main({'R1': '0xe', 'R2': '0x0', 'R3': '0x38', 'R4': '0x0', 'R5': '0x2d'})) # 23607310
 print(main({'R1': '0x1f', 'R2': '0x0', 'R3': '0x10d', 'R4': '0x0', 'R5': '0x3a'})) # 30477599
 ```
+
+![17 вариант](https://github.com/mir4sem/python/assets/70198995/b8dd8e05-465e-4db6-bb59-1c31c6e987cd)
+
+```python
+def main(decimal_string):
+    number = int(decimal_string)
+
+    R1 = (number >> 0) & 0x1FF 
+    R2 = (number >> 9) & 0x3FF
+    R4 = (number >> 27) & 0x1F
+    R5 = (number >> 32) & 0x1FF
+
+    return (R1, R2, R4, R5)
+
+
+print(main('1677022578475')) # (299, 739, 14, 390)
+print(main('228977478305')) # (161, 901, 10, 53)
+print(main('1995843470136')) # (312, 321, 22, 464)
+print(main('1936189446509')) # (365, 300, 25, 450)
+```
