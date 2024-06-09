@@ -194,45 +194,35 @@ print(main(B2)) # 96
 import math
 import numpy as np
 
-def main(B):
-    Δ = {
-        math.ceil(beta / 2) + 8 * beta
-        for beta in B
-        if beta >= 5
-    }
-
+def main(Δ):
     X = {
-        abs(beta)
-        for beta in B
-        if beta < 87 or beta >= -27
+        delta
+        for delta in Δ
+        if -40 < delta <= 93
     }
 
-    I = Δ.union(X)
-
-    Z = {
-        math.floor(chi / 3) - iota
-        for chi in X
-        for iota in I
-        if chi <= iota
+    P = {
+        delta**2
+        for delta in Δ
+        if -28 <= delta <= 95
     }
 
-    union_I_Z = I.union(Z)
-    lenIZ = len(union_I_Z)
+    Λ = X.union(P)
 
-    PROD = np.prod([
-        zeta % 3
-        for zeta in Z
-    ])
+    product_P_Λ = len(P) * len(Λ)
 
-    result = lenIZ + PROD
+    sum_P_Λ = sum(rho * lam for rho in P for lam in Λ)
 
-    return result
+    tau = product_P_Λ + sum_P_Λ
 
-B1 = {97, -28, 9, 44, 12, -82, 51, 62, -67, -1}
-B2 = {32, 75, -50, 16, -79, 49, 22, 59, -68}
+    return tau
 
-print(main(B1)) # 108
-print(main(B2)) # 96
+
+B1 = {1, -23, 74, 10, -18, 80, 18, -70, -66} # 166418002
+B2 = {32, 64, 96, -96, 68, 98, 69, -81, -39, 29} # 238921929
+
+print(main(B1)) 
+print(main(B2))
 ```
 
 ![image](https://github.com/mir4sem/python/assets/70198995/543c5be6-87eb-4ea6-a351-e6aacc26e68c)
