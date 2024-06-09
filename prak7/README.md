@@ -1,7 +1,45 @@
 ![image](https://github.com/mir4sem/python/assets/70198995/8ecba489-f697-4710-ab2d-5657bcc531bb)
 
 ```python
+def x0(x, left, right):
+    if x[0] == "JSON5":
+        return left
+    elif x[0] == "IOKE":
+        return right
 
+def x1(x, left, mid, right):
+    if x[1] == "VHDL":
+        return left
+    elif x[1] == "RHTML":
+        return mid
+    elif x[1] == "RED":
+        return right
+
+
+def x2(x, left, right):
+    if x[2] == "UNO":
+        return left
+    elif x[2] == "RAGEL":
+        return right
+
+
+def x3(x, left, mid, right):
+    if x[3] == "QMAKE":
+        return left
+    elif x[3] == "CSV":
+        return mid
+    elif x[3] == "GRACE":
+        return right
+
+
+def main(x):
+    return x2(x, x3(x, x1(x, 0, 1, 2), x1(x, 3, 4, 5), 6), x1(x, x0(x, 7, 8), x3(x, 9, 10, 11), 12))
+
+print(main(['IOKE', 'RED', 'RAGEL', 'CSV'])) # 12
+print(main(['JSON5', 'VHDL', 'UNO', 'CSV'])) # 3
+print(main(['JSON5', 'VHDL', 'RAGEL', 'GRACE'])) # 7
+print(main(['IOKE', 'VHDL', 'UNO', 'QMAKE'])) # 0
+print(main(['JSON5', 'RHTML', 'UNO', 'CSV'])) # 4
 ```
 
 Реализовать функцию для вычисления дерева решений:
