@@ -361,4 +361,51 @@ print(main('0xebb6d7087'))  # Ожидается: '63216597211'
 print(main('0x14d2a70063'))  # Ожидается: '89389105321'
 ```
 
+![13 вариант](https://github.com/mir4sem/python/assets/70198995/c940c500-ec5a-40ec-9b95-16d490aa9d22)
 
+```python
+def main(num):
+    # Извлекаем значения битовых полей
+    K1 = num & 0xF
+    K2 = (num >> 4) & 0xF
+    K3 = (num >> 9) & 0x7F
+    K4 = (num >> 16) & 0x1
+    K5 = (num >> 17) & 0x3
+    K6 = (num >> 19) & 0x7F
+
+    # Создаем список пар имя-значение
+    result = [('K1', K1), ('K2', K2), ('K3', K3), ('K4', K4), ('K5', K5), ('K6', K6)]
+
+    return result
+
+print(main(9406431))     # [('K1', 15), ('K2', 29), ('K3', 67), ('K4', 1), ('K5', 3), ('K6', 17)]
+print(main(58661559))    # [('K1', 7), ('K2', 11), ('K3', 13), ('K4', 1), ('K5', 3), ('K6', 111)]
+print(main(15593628))     # [('K1', 12), ('K2', 9), ('K3', 120), ('K4', 1), ('K5', 2), ('K6', 29)]
+print(main(53766688))     # [('K1', 0), ('K2', 2), ('K3', 53), ('K4', 0), ('K5', 2), ('K6', 102)]
+```
+
+![14 вариант](https://github.com/mir4sem/python/assets/70198995/b7f35083-e27c-4b4f-851d-a77556a5a3f0)
+
+```python
+def main(bit_fields):
+    R1 = int(bit_fields['R1'], 16)
+    R2 = int(bit_fields['R2'], 16)
+    R3 = int(bit_fields['R3'], 16)
+    R4 = int(bit_fields['R4'], 16)
+    R5 = int(bit_fields['R5'], 16)
+    
+    R1 <<= 0
+    R2 <<= 6
+    R3 <<= 8
+    R4 <<= 17
+    R5 <<= 19
+
+    result = R1 | R2 | R3 | R4 | R5
+    return str(result)
+
+
+print(main({'R1': '0x22', 'R2': '0x1', 'R3': '0x170', 'R4': '0x3', 'R5': '0x11'})) # 9400418
+print(main({'R1': '0xa', 'R2': '0x0', 'R3': '0x1d3', 'R4': '0x1', 'R5': '0x2'})) # 1299210
+print(main({'R1': '0xe', 'R2': '0x0', 'R3': '0x38', 'R4': '0x0', 'R5': '0x2d'})) # 23607310
+print(main({'R1': '0x1f', 'R2': '0x0', 'R3': '0x10d', 'R4': '0x0', 'R5': '0x3a'})) # 30477599
+```
