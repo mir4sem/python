@@ -1,3 +1,5 @@
+![image](https://github.com/mir4sem/python/assets/70198995/0d8d0429-3afc-4497-a034-91587f3f28e8)
+
 ![image](https://github.com/mir4sem/python/assets/70198995/8ecba489-f697-4710-ab2d-5657bcc531bb)
 
 ```python
